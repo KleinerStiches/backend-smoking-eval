@@ -1,9 +1,9 @@
 import tornado.web
-from tornado.escape import to_unicode
-import json
 
+from poc_services.summary_service import load_summary
+from poc_services.questionary_service import update_questionary
 from poc_models.forminfo import QuestionBinaryFormInfo
-from poc_storage.handling_json import load_dictionary, dump_dictionary, load_form_contents
+from poc_storage.handling_json import load_form_contents
 
 
 class BinaryQuestionController(tornado.web.RequestHandler):
@@ -29,15 +29,17 @@ class BinaryQuestionController(tornado.web.RequestHandler):
             question=form_info.question,
             question_code=code,
             next_yes=form_info.next_yes,
-            next_no=form_info.next_no
+            next_no=form_info.next_no,
+            summary=load_summary()
         )
 
     def post(self, *args, **kwargs):
-        questionary = load_dictionary()
-        question_code = self.get_body_argument(name="question_code")
-        answer = self.get_body_arguments(name="answer")[0]
-        questionary[question_code] = answer
-        dump_dictionary(questionary)
+        answer = self.get_body_argument(name="answer")
+
+        update_questionary(
+            key=self.get_body_argument(name="question_code"),
+            value=answer
+        )
 
         if answer == "Ja":
             redirection = self.get_body_argument(name="next_yes")

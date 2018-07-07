@@ -1,8 +1,9 @@
 import tornado.web
 
+from poc_services.summary_service import load_summary
 from poc_models.forminfo import QuestionInputFormInfo
-
-from poc_storage.handling_json import load_dictionary, dump_dictionary, load_form_contents
+from poc_services.questionary_service import update_questionary
+from poc_storage.handling_json import load_form_contents
 
 
 class InputQuestionController(tornado.web.RequestHandler):
@@ -28,16 +29,17 @@ class InputQuestionController(tornado.web.RequestHandler):
             question=form_info.question,
             question_code=code,
             input_placeholder=form_info.placeholder,
-            redirect_next=form_info.next
+            redirect_next=form_info.next,
+            summary=load_summary()
         )
 
     def post(self, *args, **kwargs):
         redirection = self.get_body_argument(name="redirect_next")
 
-        questionary = load_dictionary()
-        question_code = self.get_body_argument(name="question_code")
-        questionary[question_code] = self.get_body_argument(name="answer")
-        dump_dictionary(questionary)
+        update_questionary(
+            key=self.get_body_argument(name="question_code"),
+            value=self.get_body_argument(name="answer")
+        )
 
         self.redirect("{}".format(redirection))
 

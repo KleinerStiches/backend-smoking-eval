@@ -13,17 +13,19 @@ def load_form_contents():
         return json.load(json_data)
 
 
-def load_dictionary():
+def load_dictionary(relative_path="\\smoking_eval\\store\\questionaries.json"):
     with open(
-            '{}\\smoking_eval\\store\\questionaries.json'.format(base_path),
+            # '{}\\smoking_eval\\store\\questionaries.json'.format(base_path),
+            '{}{}'.format(base_path, relative_path),
             encoding="utf-8"
     ) as json_data:
         return json.load(json_data)
 
 
-def dump_dictionary(eval_dictionary):
+def dump_dictionary(eval_dictionary, relative_path="\\smoking_eval\\store\\questionaries.json"):
     with open(
-            '{}\\smoking_eval\\store\\questionaries.json'.format(base_path),
+            # '{}\\smoking_eval\\store\\questionaries.json'.format(base_path),
+            '{}{}'.format(base_path, relative_path),
             'w',
             encoding="utf-8"
     ) as json_file:

@@ -1,7 +1,9 @@
 import tornado.web
 
+from poc_services.summary_service import load_summary
+from poc_services.questionary_service import update_questionary
 from poc_models.forminfo import QuestionOptionsFormInfo
-from poc_storage.handling_json import load_dictionary, dump_dictionary, load_form_contents
+from poc_storage.handling_json import load_form_contents
 
 
 class OptionsQuestionController(tornado.web.RequestHandler):
@@ -27,16 +29,17 @@ class OptionsQuestionController(tornado.web.RequestHandler):
             question=form_info.question,
             question_code=code,
             options=form_info.options,
-            redirect_next=form_info.next
+            redirect_next=form_info.next,
+            summary=load_summary()
         )
 
     def post(self, *args, **kwargs):
         redirection = self.get_body_argument(name="redirect_next")
 
-        questionary = load_dictionary()
-        question_code = self.get_body_argument(name="question_code")
-        questionary[question_code] = self.get_body_argument(name="answer")
-        dump_dictionary(questionary)
+        update_questionary(
+            key=self.get_body_argument(name="question_code"),
+            value=self.get_body_argument(name="answer")
+        )
 
         self.redirect("{}".format(redirection))
 
