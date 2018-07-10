@@ -11,6 +11,7 @@ from poc_controllers.input_question_controller import InputQuestionController
 from poc_controllers.register_controller import RegisterController
 from poc_controllers.home_controller import HomeController
 from poc_controllers.acquisition_controller import AcquisitionController
+from poc_controllers.advanced_view_controller import AdvancedViewController
 
 from pathlib import Path
 
@@ -30,7 +31,8 @@ class ApplicationContext(tornado.web.Application):
             (r"/register", RegisterController),
             (r"/question-binary", BinaryQuestionController),
             (r"/question-options", OptionsQuestionController),
-            (r"/question-input", InputQuestionController)
+            (r"/question-input", InputQuestionController),
+            (r"/advanced-interview", AdvancedViewController)
             ]
 
         settings = dict(
