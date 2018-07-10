@@ -1,6 +1,4 @@
-import json
-
-from poc_storage.handling_json import load_dictionary, dump_dictionary, load_form_contents
+from poc_storage.handling_json import load_form_contents
 
 
 def find_question_type(question_form_info):
@@ -26,11 +24,11 @@ def build_questions_tree():
 
     current_type = find_question_type(starting_question)
 
-    question_tree = rec_question_tree(starting_question, current_type)
-
-    print(json.dumps(question_tree, indent=4))
+    return rec_question_tree(starting_question, current_type)
 
 
+# TODO the code with the try until min question_..._type is duplicated and
+# TODO can be out sourced to a separate function
 def rec_question_tree(question, question_type):
     all_questions = [content for content in load_form_contents().get('codes')]
 
@@ -77,43 +75,3 @@ def rec_question_tree(question, question_type):
         print('type not found')
 
     return question
-
-
-build_questions_tree()
-
-
-# def get_questions_until_binary(starting_question):
-#
-#     questions_to_next_binary = dict()
-#
-#     next_questions = get_next_questions(starting_question)
-#
-#     # None == unknown question type
-#     # 1 == options or input
-#     # 2 == binary
-#     if not next_questions:
-#         return
-#     elif len(next_questions) == 2:
-#         return {
-#             next_questions.get("next")
-#         }
-#     elif len(next_questions) == 1:
-#
-#
-# def get_next_questions(current_question):
-#     current_type = find_question_type(current_question)
-#     if current_type == "question-input" or current_type == "question-options":
-#         next_url = current_question.get("next")
-#         next_codes = str.split(next_url, '=')[1]
-#     elif current_type "question-binary":
-#         next_yes_url = current_question.get("next_yes")
-#         next_no_url = current_question.get("next_no")
-#         next_codes = [
-#             str.split(next_yes_url, '=')[1],
-#             str.split(next_no_url, '=')[1]
-#         ]
-#     else:
-#         return None
-#
-#     all_questions = load_form_contents()
-#     return [question for question in all_questions if question.get("code") == next_code]
