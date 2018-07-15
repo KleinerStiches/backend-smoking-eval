@@ -71,6 +71,7 @@ def rec_question_tree(question, question_type):
         try:
             code_yes = str.split(question.get("next_yes"), '=')[1]
         except IndexError:
+            question['question_type'] = question_type
             return question
 
         question_yes = [match for match in all_questions if match.get('code') == code_yes][0]
@@ -83,6 +84,7 @@ def rec_question_tree(question, question_type):
         try:
             code_no = str.split(question.get("next_no"), '=')[1]
         except IndexError:
+            question['question_type'] = question_type
             return question
 
         question_no = [match for match in all_questions if match.get('code') == code_no][0]
@@ -96,6 +98,7 @@ def rec_question_tree(question, question_type):
         try:
             next_code = str.split(question.get("next"), '=')[1]
         except IndexError:
+            question['question_type'] = question_type
             return question
 
         next_question = [match for match in all_questions if match.get('code') == next_code][0]
@@ -115,4 +118,4 @@ def rec_question_tree(question, question_type):
 #
 # print(json.dumps(tree, indent=4))
 #
-# print(flatten_tree(tree))
+# sprint(flatten_tree(tree))
