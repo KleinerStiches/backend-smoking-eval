@@ -1,4 +1,5 @@
 import json
+import random
 
 from poc_storage.handling_json import load_form_contents
 
@@ -52,16 +53,15 @@ def build_questions_tree():
     current_type = find_question_type(starting_question)
 
     #return rec_question_tree(starting_question, current_type)
+    collapse_question_id = 0
     question_tree = dict()
     question_tree['code'] = "root"
     question_tree['question_type'] = "question-input"
-    question_tree['next'] = rec_question_tree(starting_question, current_type)
+    question_tree['next'] = rec_question_tree(starting_question, current_type, collapse_question_id)
     return question_tree
 
 
-# TODO the code with the try until min question_..._type is duplicated and
-# TODO can be out sourced to a separate function
-def rec_question_tree(question, question_type):
+def rec_question_tree(question, question_type, collapse_id):
     all_questions = [content for content in load_form_contents().get('codes')]
 
     if not question_type:
@@ -71,48 +71,110 @@ def rec_question_tree(question, question_type):
         try:
             code_yes = str.split(question.get("next_yes"), '=')[1]
         except IndexError:
+            question['collapse_id'] = collapse_id
             question['question_type'] = question_type
             return question
 
         question_yes = [match for match in all_questions if match.get('code') == code_yes][0]
         question_yes_type = find_question_type(question_yes)
 
-        rec_question_tree(question_yes, question_yes_type)
+        rec_question_tree(question_yes, question_yes_type, random.randint(10, 10000) + collapse_id)
         question['question_type'] = question_type
         question['next_yes'] = question_yes
+        question['collapse_id'] = collapse_id
 
         try:
             code_no = str.split(question.get("next_no"), '=')[1]
         except IndexError:
+            question['collapse_id'] = collapse_id
             question['question_type'] = question_type
             return question
 
         question_no = [match for match in all_questions if match.get('code') == code_no][0]
         question_no_type = find_question_type(question_no)
 
-        rec_question_tree(question_no, question_no_type)
+        rec_question_tree(question_no, question_no_type, random.randint(10, 10000) + collapse_id)
         question['question_type'] = question_type
         question['next_no'] = question_no
+        question['collapse_id'] = collapse_id
 
     elif question_type == "question-options" or question_type == "question-input":
         try:
             next_code = str.split(question.get("next"), '=')[1]
         except IndexError:
+            question['collapse_id'] = collapse_id
             question['question_type'] = question_type
             return question
 
         next_question = [match for match in all_questions if match.get('code') == next_code][0]
         next_question_type = find_question_type(next_question)
 
-        rec_question_tree(next_question, next_question_type)
+        rec_question_tree(next_question, next_question_type, collapse_id)
         question['question_type'] = question_type
         question['next'] = next_question
+        question['collapse_id'] = collapse_id
 
     else:
 
         print('type not found')
 
     return question
+
+
+# TODO the code with the try until min question_..._type is duplicated and
+# TODO can be out sourced to a separate function
+# def rec_question_tree(question, question_type):
+#     all_questions = [content for content in load_form_contents().get('codes')]
+#
+#     if not question_type:
+#         return question
+#
+#     elif question_type == "question-binary":
+#         try:
+#             code_yes = str.split(question.get("next_yes"), '=')[1]
+#         except IndexError:
+#             question['question_type'] = question_type
+#             return question
+#
+#         question_yes = [match for match in all_questions if match.get('code') == code_yes][0]
+#         question_yes_type = find_question_type(question_yes)
+#
+#         rec_question_tree(question_yes, question_yes_type)
+#         question['question_type'] = question_type
+#         question['next_yes'] = question_yes
+#
+#         try:
+#             code_no = str.split(question.get("next_no"), '=')[1]
+#         except IndexError:
+#             question['question_type'] = question_type
+#             return question
+#
+#         question_no = [match for match in all_questions if match.get('code') == code_no][0]
+#         question_no_type = find_question_type(question_no)
+#
+#         rec_question_tree(question_no, question_no_type)
+#         question['question_type'] = question_type
+#         question['next_no'] = question_no
+#
+#     elif question_type == "question-options" or question_type == "question-input":
+#         try:
+#             next_code = str.split(question.get("next"), '=')[1]
+#         except IndexError:
+#             question['question_type'] = question_type
+#             return question
+#
+#         next_question = [match for match in all_questions if match.get('code') == next_code][0]
+#         next_question_type = find_question_type(next_question)
+#
+#         rec_question_tree(next_question, next_question_type)
+#         question['question_type'] = question_type
+#         question['next'] = next_question
+#
+#     else:
+#
+#         print('type not found')
+#
+#     return question
 
 # tree = build_questions_tree()
 #
