@@ -1,5 +1,6 @@
 import json
 import random
+import uuid
 
 from poc_storage.handling_json import load_form_contents
 
@@ -30,6 +31,7 @@ def build_questions_tree():
     #return rec_question_tree(starting_question, current_type)
     collapse_question_id = 0
     question_tree = dict()
+    question_tree['id'] = "root"
     question_tree['code'] = "root"
     question_tree['question_type'] = "question-input"
     question_tree['next'] = rec_question_tree(starting_question, current_type, collapse_question_id)
@@ -46,6 +48,7 @@ def rec_question_tree(question, question_type, collapse_id):
         try:
             code_yes = str.split(question.get("next_yes"), '=')[1]
         except IndexError:
+            question['id'] = str(uuid.uuid4())
             question['collapse_id'] = collapse_id
             question['question_type'] = question_type
             return question
@@ -54,6 +57,7 @@ def rec_question_tree(question, question_type, collapse_id):
         question_yes_type = find_question_type(question_yes)
 
         rec_question_tree(question_yes, question_yes_type, random.randint(10, 10000) + collapse_id)
+        question['id'] = str(uuid.uuid4())
         question['question_type'] = question_type
         question['next_yes'] = question_yes
         question['collapse_id'] = collapse_id
@@ -61,6 +65,7 @@ def rec_question_tree(question, question_type, collapse_id):
         try:
             code_no = str.split(question.get("next_no"), '=')[1]
         except IndexError:
+            question['id'] = str(uuid.uuid4())
             question['collapse_id'] = collapse_id
             question['question_type'] = question_type
             return question
@@ -69,6 +74,7 @@ def rec_question_tree(question, question_type, collapse_id):
         question_no_type = find_question_type(question_no)
 
         rec_question_tree(question_no, question_no_type, random.randint(10, 10000) + collapse_id)
+        question['id'] = str(uuid.uuid4())
         question['question_type'] = question_type
         question['next_no'] = question_no
         question['collapse_id'] = collapse_id
@@ -77,6 +83,7 @@ def rec_question_tree(question, question_type, collapse_id):
         try:
             next_code = str.split(question.get("next"), '=')[1]
         except IndexError:
+            question['id'] = str(uuid.uuid4())
             question['collapse_id'] = collapse_id
             question['question_type'] = question_type
             return question
@@ -85,6 +92,7 @@ def rec_question_tree(question, question_type, collapse_id):
         next_question_type = find_question_type(next_question)
 
         rec_question_tree(next_question, next_question_type, collapse_id)
+        question['id'] = str(uuid.uuid4())
         question['question_type'] = question_type
         question['next'] = next_question
         question['collapse_id'] = collapse_id
