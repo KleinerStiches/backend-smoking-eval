@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5344d1e9-70f2-4103-b6df-e8034fe7764b" name="Default" comment="" />
+    <list default="true" id="5344d1e9-70f2-4103-b6df-e8034fe7764b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/application_context.py" afterPath="$PROJECT_DIR$/application/application_context.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,12 +38,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smoking_eval.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="smoking_eval.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smoking_eval.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
               <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_context.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/application_context.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="47" column="40" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,10 +96,10 @@
         <option value="$PROJECT_DIR$/poc_controllers/input_question_controller.py" />
         <option value="$PROJECT_DIR$/view/partials.py" />
         <option value="$PROJECT_DIR$/poc_services/type_service.py" />
-        <option value="$PROJECT_DIR$/application/application_context.py" />
         <option value="$PROJECT_DIR$/poc_services/summary_service.py" />
         <option value="$PROJECT_DIR$/poc_controllers/advanced_view_controller.py" />
         <option value="$PROJECT_DIR$/poc_services/advanced_view_service.py" />
+        <option value="$PROJECT_DIR$/application/application_context.py" />
       </list>
     </option>
   </component>
@@ -336,7 +350,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="2" width="1934" height="1036" extended-state="1" />
+    <frame x="-8" y="2" width="1934" height="1036" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25052193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -632,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/application_context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/tornado/netutil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -679,6 +687,16 @@
         <state relative-caret-position="100">
           <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/application_context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="47" column="40" lean-forward="false" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

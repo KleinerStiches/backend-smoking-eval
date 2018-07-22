@@ -37,8 +37,8 @@ class ApplicationContext(tornado.web.Application):
 
         settings = dict(
             ui_modules=partials,
-            template_path='{}\\smoking_eval'.format(base_path),
-            static_path='{}\\smoking_eval/'.format(base_path)
+            template_path='{}/smoking_eval'.format(base_path),
+            static_path='{}/smoking_eval/'.format(base_path)
         )
 
         tornado.web.Application.__init__(self, handlers, **settings)
