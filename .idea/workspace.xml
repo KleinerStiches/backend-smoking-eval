@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5344d1e9-70f2-4103-b6df-e8034fe7764b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_controllers/acquisition_controller.py" afterPath="$PROJECT_DIR$/poc_controllers/acquisition_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_services/questionary_service.py" afterPath="$PROJECT_DIR$/poc_services/questionary_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_storage/handling_json.py" afterPath="$PROJECT_DIR$/poc_storage/handling_json.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smoking_eval.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="smoking_eval.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smoking_eval.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -47,6 +46,16 @@
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handling_json.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/poc_storage/handling_json.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +85,6 @@
         <option value="$PROJECT_DIR$/poc_controllers/finish_controller.py" />
         <option value="$PROJECT_DIR$/poc_storage/evaluation_acquisition.py" />
         <option value="$PROJECT_DIR$/poc_controllers/register_controller.py" />
-        <option value="$PROJECT_DIR$/poc_storage/handling_json.py" />
         <option value="$PROJECT_DIR$/poc_services/theme_service.py" />
         <option value="$PROJECT_DIR$/poc_models/summary.py" />
         <option value="$PROJECT_DIR$/poc_controllers/options_question_controller.py" />
@@ -91,6 +99,7 @@
         <option value="$PROJECT_DIR$/smoking_eval.py" />
         <option value="$PROJECT_DIR$/poc_services/questionary_service.py" />
         <option value="$PROJECT_DIR$/poc_controllers/acquisition_controller.py" />
+        <option value="$PROJECT_DIR$/poc_storage/handling_json.py" />
       </list>
     </option>
   </component>
@@ -125,6 +134,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tornado_smoking_eval" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tornado_smoking_eval" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tornado_smoking_eval" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="poc_storage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -588,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poc_storage/handling_json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/poc_services/type_service.py" />
     <entry file="file://$PROJECT_DIR$/poc_services/summary_service.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -698,6 +714,14 @@
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poc_storage/handling_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
