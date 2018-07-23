@@ -7,3 +7,9 @@ def update_questionary(key, value):
     questionary[question_code] = value
     dump_dictionary(questionary)
 
+
+def clear_questionary():
+    empty_questionary = {"questionary": "questionary"}
+    dump_dictionary(empty_questionary)
+
+

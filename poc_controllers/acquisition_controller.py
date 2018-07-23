@@ -1,5 +1,7 @@
 import tornado.web
 
+from poc_services.questionary_service import clear_questionary
+
 
 class AcquisitionController(tornado.web.RequestHandler):
 
@@ -8,3 +10,10 @@ class AcquisitionController(tornado.web.RequestHandler):
 
     def get(self):
         self.render("acquisition.html")
+
+    def post(self, *args, **kwargs):
+        clear_questionary()
+        self.redirect("/home")
+
+
+
