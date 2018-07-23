@@ -14,7 +14,7 @@ def load_summary():
             "code": key,
             "question": content.get("question"),
             "answer": answers.get(key),
-            "question_url": question_specific_url
+            "question_url": content.get("question_url")
         }
         for content in form_contents["codes"]
         for key in answers

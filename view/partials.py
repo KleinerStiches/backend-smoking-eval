@@ -16,8 +16,9 @@ class Footer(tornado.web.UIModule):
 
 
 class Summary(tornado.web.UIModule):
-    def render(self, summary):
+    def render(self, summary, current_question_id):
         return self.render_string(
             "partials/summary.html",
-            summary=summary
+            summary=summary,
+            current_question_id=current_question_id
         )
