@@ -30,7 +30,7 @@ class OptionsQuestionController(tornado.web.RequestHandler):
             question_code=code,
             options=form_info.options,
             redirect_next=form_info.next,
-            summary=load_summary()
+            summary=load_summary(code)
         )
 
     def post(self, *args, **kwargs):

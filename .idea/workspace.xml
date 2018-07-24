@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5344d1e9-70f2-4103-b6df-e8034fe7764b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_controllers/binary_question_controller.py" afterPath="$PROJECT_DIR$/poc_controllers/binary_question_controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_services/questionary_service.py" afterPath="$PROJECT_DIR$/poc_services/questionary_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_controllers/input_question_controller.py" afterPath="$PROJECT_DIR$/poc_controllers/input_question_controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_controllers/options_question_controller.py" afterPath="$PROJECT_DIR$/poc_controllers/options_question_controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/poc_services/summary_service.py" afterPath="$PROJECT_DIR$/poc_services/summary_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +20,8 @@
       <file leaf-file-name="binary_question_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/poc_controllers/binary_question_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="380">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -27,11 +29,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="questionary_service.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/poc_services/questionary_service.py">
+      <file leaf-file-name="input_question_controller.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/poc_controllers/input_question_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="143">
+              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="options_question_controller.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/poc_controllers/options_question_controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="summary_service.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/poc_services/summary_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -45,6 +69,12 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>load</find>
+      <find>load_summa</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +94,6 @@
         <option value="$PROJECT_DIR$/poc_controllers/register_controller.py" />
         <option value="$PROJECT_DIR$/poc_services/theme_service.py" />
         <option value="$PROJECT_DIR$/poc_models/summary.py" />
-        <option value="$PROJECT_DIR$/poc_controllers/input_question_controller.py" />
         <option value="$PROJECT_DIR$/poc_services/type_service.py" />
         <option value="$PROJECT_DIR$/poc_controllers/advanced_view_controller.py" />
         <option value="$PROJECT_DIR$/poc_services/advanced_view_service.py" />
@@ -73,10 +102,11 @@
         <option value="$PROJECT_DIR$/poc_controllers/acquisition_controller.py" />
         <option value="$PROJECT_DIR$/poc_storage/handling_json.py" />
         <option value="$PROJECT_DIR$/view/partials.py" />
-        <option value="$PROJECT_DIR$/poc_services/summary_service.py" />
-        <option value="$PROJECT_DIR$/poc_controllers/options_question_controller.py" />
-        <option value="$PROJECT_DIR$/poc_controllers/binary_question_controller.py" />
         <option value="$PROJECT_DIR$/poc_services/questionary_service.py" />
+        <option value="$PROJECT_DIR$/poc_services/summary_service.py" />
+        <option value="$PROJECT_DIR$/poc_controllers/binary_question_controller.py" />
+        <option value="$PROJECT_DIR$/poc_controllers/input_question_controller.py" />
+        <option value="$PROJECT_DIR$/poc_controllers/options_question_controller.py" />
       </list>
     </option>
   </component>
@@ -641,14 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poc_services/summary_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/partials.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -662,24 +684,6 @@
         <state relative-caret-position="420">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/poc_controllers/input_question_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/poc_controllers/options_question_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,21 +707,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/poc_services/questionary_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poc_services/summary_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/poc_controllers/binary_question_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poc_services/questionary_service.py">
+    <entry file="file://$PROJECT_DIR$/poc_controllers/input_question_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="143">
+          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poc_controllers/options_question_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

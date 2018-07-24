@@ -31,7 +31,7 @@ class BinaryQuestionController(tornado.web.RequestHandler):
             question_code=code,
             next_yes=form_info.next_yes,
             next_no=form_info.next_no,
-            summary=load_summary()
+            summary=load_summary(code)
         )
 
     def post(self, *args, **kwargs):
