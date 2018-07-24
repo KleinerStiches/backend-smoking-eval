@@ -1,7 +1,8 @@
 import tornado.web
 
 from poc_services.summary_service import load_summary
-from poc_services.questionary_service import update_questionary
+from poc_services.questionary_service import update_questionary, \
+    questionary_contains_answer, remove_answers_until
 from poc_models.forminfo import QuestionBinaryFormInfo
 from poc_storage.handling_json import load_form_contents
 
@@ -35,6 +36,13 @@ class BinaryQuestionController(tornado.web.RequestHandler):
 
     def post(self, *args, **kwargs):
         answer = self.get_body_argument(name="answer")
+        current_question_code = self.get_body_argument(name="question_code")
+
+        # if the question was asked before and the answer changed
+        # remove questionaries answers until this question
+        current_question_answer = questionary_contains_answer(current_question_code)
+        if current_question_answer != answer and current_question_answer:
+            remove_answers_until(current_question_code)
 
         update_questionary(
             key=self.get_body_argument(name="question_code"),

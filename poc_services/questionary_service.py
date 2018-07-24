@@ -8,8 +8,27 @@ def update_questionary(key, value):
     dump_dictionary(questionary)
 
 
+def questionary_contains_answer(question_code):
+    questionary = load_dictionary()
+    if question_code in questionary.keys():
+        return questionary[question_code]
+    else:
+        return None
+
+
+def remove_answers_until(question_code):
+    questionary = load_dictionary()
+
+    for answer_code in reversed(list(questionary.keys())):
+        if answer_code == question_code:
+            break
+        else:
+            if answer_code.isnumeric():
+                questionary.pop(answer_code)
+
+    dump_dictionary(questionary)
+
+
 def clear_questionary():
     empty_questionary = {"questionary": "questionary"}
     dump_dictionary(empty_questionary)
-
-
