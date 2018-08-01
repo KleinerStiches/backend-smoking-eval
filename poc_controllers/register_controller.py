@@ -24,5 +24,11 @@ class RegisterController(RequestHandler):
 
         dump_dictionary(eval_dictionary=questionary)
 
-        self.redirect("/question-binary?code=3")
-        return
+        questioning_type = self.get_body_argument(name="commit")
+
+        if questioning_type == "Zum Fragen-Formular":
+            self.redirect("/advanced-interview")
+        elif questioning_type == "Zu den Fragen":
+            self.redirect("/question-binary?code=3")
+        else:
+            self.redirect("/home")
