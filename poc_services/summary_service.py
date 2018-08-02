@@ -1,7 +1,7 @@
 from poc_storage.handling_json import load_dictionary, dump_dictionary, load_form_contents
 
 
-def load_summary(current_question_code):
+def load_summary(current_question_code=None):
     answers = load_dictionary()
     form_contents = load_form_contents()
 
@@ -21,23 +21,23 @@ def load_summary(current_question_code):
         if content["code"] == key
     ]
 
-    # if the current question is not in the answers append the current question to the summary
-    if not [answer for answer in answer_summary if answer['code'] == current_question_code]:
-        answer_summary.append(
-            [
-                {
-                    "code": current_question_code,
-                    "question": content.get("question"),
-                    "answer": "",
-                    "question_url": content.get("question_url")
-                }
-                for content in form_contents["codes"]
-                if content["code"] == current_question_code
-            ][0]
-        )
+    if current_question_code:
+        # if the current question is not in the answers append the current question to the summary
+        if not [answer for answer in answer_summary if answer['code'] == current_question_code]:
+            answer_summary.append(
+                [
+                    {
+                        "code": current_question_code,
+                        "question": content.get("question"),
+                        "answer": "",
+                        "question_url": content.get("question_url")
+                    }
+                    for content in form_contents["codes"]
+                    if content["code"] == current_question_code
+                ][0]
+            )
 
     return answer_summary
-
 
 
 def find_questions_url(question_form_info):
