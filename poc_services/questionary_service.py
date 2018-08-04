@@ -20,10 +20,8 @@ def remove_answers_until(question_code):
     questionary = load_dictionary()
 
     for answer_code in reversed(list(questionary.keys())):
-        if answer_code == question_code:
-            break
-        else:
-            if answer_code.isnumeric():
+        if answer_code.isnumeric():
+            if int(answer_code) > int(question_code):
                 questionary.pop(answer_code)
 
     dump_dictionary(questionary)
