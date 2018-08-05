@@ -25,13 +25,16 @@ class BinaryQuestionController(tornado.web.RequestHandler):
                     next_no=content.get("next_no")
                 )
 
+        stored_answer = questionary_contains_answer(code)
+
         self.render(
             "binary_question.html",
             question=form_info.question,
             question_code=code,
             next_yes=form_info.next_yes,
             next_no=form_info.next_no,
-            summary=load_summary(code)
+            summary=load_summary(code),
+            answer=stored_answer
         )
 
     def post(self, *args, **kwargs):
