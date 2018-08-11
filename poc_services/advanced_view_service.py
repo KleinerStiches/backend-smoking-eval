@@ -103,3 +103,44 @@ def rec_question_tree(question, question_type, collapse_id):
 
     return question
 
+
+def track_answer_branch(question_answer_pairs, all_questions):
+    answer_codes = []
+    for pair in question_answer_pairs:
+
+        for question in all_questions["codes"]:
+
+            if len(answer_codes) < 1:
+                answer_codes.append(pair["question"])
+
+            if answer_codes[-1] == question["code"] and pair["question"] == question["code"]:
+
+                if find_question_type(question) == "question-binary":
+
+                    if pair["answer"] == "Ja":
+                        try:
+                            answer_codes.append(question["next_yes"].split("=")[1])
+                            break
+                        except IndexError:
+                            # /acquisition
+                            continue
+
+                    elif pair["answer"] == "Nein":
+                        try:
+                            answer_codes.append(question["next_no"].split("=")[1])
+                            break
+                        except IndexError:
+                            # /acquisition
+                            continue
+                    else:
+                        pass
+
+                else:
+                    try:
+                        answer_codes.append(question["next"].split("=")[1])
+                        break
+                    except IndexError:
+                        # /acquisition
+                        continue
+
+    return answer_codes
