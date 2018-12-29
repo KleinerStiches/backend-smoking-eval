@@ -1,4 +1,5 @@
 import tornado.web
+import regex
 from tornado.web import MissingArgumentError
 
 from poc_services.advanced_view_service import build_questions_tree, \
@@ -30,9 +31,9 @@ class AdvancedViewController(tornado.web.RequestHandler):
                     {
                         "question": current_question["code"],
                         "type": question_type,
-                        "answer": self.get_body_argument("answer-{}".format(
-                            str(current_question["code"])
-                        ))
+                        "answer": self.get_body_argument(
+                            "answer-{0}".format(str(current_question["code"]))
+                        )
                     }
                 )
             except MissingArgumentError:
